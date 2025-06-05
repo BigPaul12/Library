@@ -1,0 +1,373 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: "Lora", serif;
+    background-color: #FFFFFF; /* White background */
+    color: #333333;           /* Dark grey text */
+    line-height: 1.6;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content Container */
+#main {
+    width: 100%;              /* Allow full browser width */
+    max-width: none;          /* Remove previous max-width constraint */
+    margin: 0 auto;
+    padding: 40px 60px;       /* Add more horizontal padding on desktop */
+    flex: 1;                  /* Push footer to bottom if content is short */
+}
+
+/* —————————————————— Hero / Header Section —————————————————— */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;            /* Increase height for desktop */
+    background-color: #D0E4F5; /* Light blue fallback */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .hero-text {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    color: #FFFFFF;      /* White overlay text */
+    font-size: 3rem;     /* Larger text on desktop */
+    font-family: "Georgia", serif;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* —————————————————— Featured / Info Sections —————————————————— */
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;             /* Slightly larger gap on desktop */
+    margin-bottom: 60px;
+}
+
+.info-box {
+    flex: 1 1 350px;       /* Allow boxes to grow wider */
+    background-color: #F9FAFB; /* Very light grey background */
+    border: 2px solid #B0B0B0;  /* Medium grey border */
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-4px);
+}
+
+.info-box img {
+    width: 100%;
+    height: 200px;         /* Taller images on desktop */
+    object-fit: cover;
+    border-bottom: 2px solid #B0B0B0; /* Grey border under image */
+}
+
+.info-box .info-content {
+    padding: 25px;         /* More padding inside boxes */
+    flex-grow: 1;
+}
+
+.info-box .info-content h3 {
+    font-family: "Georgia", serif;
+    font-size: 1.75rem;    /* Larger heading */
+    color: #1E3A8A; /* Deep blue heading */
+    margin-bottom: 12px;
+}
+
+.info-box .info-content p {
+    font-family: "Lora", serif;
+    font-size: 1.1rem;     /* Slightly larger paragraph */
+    color: #333333;        /* Dark grey paragraph */
+}
+
+/* —————————————————— Image Gallery Section —————————————————— */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Wider min-width */
+    gap: 20px;             /* Larger gap on desktop */
+    margin-bottom: 60px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid #B0B0B0; /* Grey border */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;         /* Taller images */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(30, 58, 138, 0.85); /* Semi-transparent deep blue */
+    color: #FFFFFF;      /* White caption text */
+    padding: 8px 12px;   /* Larger padding */
+    font-size: 1rem;     /* Larger font-size */
+    border-radius: 4px;
+}
+
+/* —————————————————— Register Button Section —————————————————— */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    margin-bottom: 60px;
+}
+
+.register-button {
+    padding: 16px 32px;    /* Larger button on desktop */
+    background-color: #1E3A8A; /* Deep blue background */
+    color: #FFFFFF;            /* White text */
+    border: 2px solid #1E3A8A;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;           /* Larger font-size */
+    font-family: "Arial", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.register-button:hover,
+.register-button:focus {
+    background-color: #FFFFFF; /* White background on hover */
+    color: #1E3A8A;            /* Deep blue text on hover */
+    border-color: #1E3A8A;     /* Blue border on hover */
+    outline: none;
+}
+
+/* —————————————————— Footer Styles —————————————————— */
+footer {
+    background-color: #F0F0F0; /* Light grey background */
+    width: 100%;              /* Span full viewport width */
+}
+
+.footerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;           /* Full width inside footer */
+    padding: 20px 60px;    /* Increase horizontal padding on desktop */
+    gap: 20px;             /* Space between on wrap */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;             /* Larger gap between icons */
+}
+
+.social-icons a {
+    font-size: 28px;       /* Larger icon size for desktop */
+    color: #1E3A8A;        /* Deep blue icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    color: #555555;        /* Dark grey on hover */
+    transform: scale(1.1);
+    outline: none;
+}
+
+.footerNav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;             /* Larger gap between links */
+}
+
+.footerNav ul li a {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;       /* Larger link font-size */
+    color: #1E3A8A;        /* Deep blue links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footerNav ul li a:hover,
+.footerNav ul li a:focus {
+    color: #555555;        /* Dark grey on hover */
+    outline: none;
+}
+
+/* Footer Bottom Text */
+.footerBottom {
+    background-color: #CCCCCC; /* Medium grey */
+    padding: 16px 20px;        /* Slightly more vertical padding */
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;           /* Larger text for desktop */
+    color: #333333;            /* Dark grey text */
+}
+
+.footerBottom .designer {
+    font-style: italic;
+    margin-left: 4px;
+}
+
+/* —————————————————— Responsive Adjustments —————————————————— */
+@media (max-width: 1200px) {
+    /* Adjust padding for slightly narrower desktops/tablets */
+    #main {
+        padding: 40px 40px;
+    }
+    .footerContainer {
+        padding: 20px 40px;
+    }
+    .hero {
+        height: 350px;
+    }
+    .hero .hero-text {
+        font-size: 2.5rem;
+        bottom: 25px;
+        left: 40px;
+    }
+    .info-box {
+        flex: 1 1 280px;
+    }
+    .info-box img {
+        height: 180px;
+    }
+    .info-box .info-content h3 {
+        font-size: 1.5rem;
+    }
+    .gallery-item img {
+        height: 180px;
+    }
+    .gallery-item .caption {
+        font-size: 0.95rem;
+    }
+    .social-icons a {
+        font-size: 26px;
+    }
+    .footerNav ul li a {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Stack footer content vertically */
+    .footerContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footerNav ul {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .social-icons {
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    .register-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    .info-section {
+        flex-direction: column;
+    }
+    .image-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    #main {
+        padding: 30px 20px;
+    }
+    .footerContainer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        height: 250px;
+    }
+    .hero .hero-text {
+        font-size: 1.8rem;
+        left: 20px;
+        bottom: 15px;
+    }
+    #main {
+        padding: 20px 10px;
+    }
+    .footerContainer {
+        padding: 15px 10px;
+    }
+}
+
+
+/* Button styles (used for forms and tabs) */
+button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* Form styles (signup.php and admin “Add Info” form) */
+form {
+    margin: 20px;
+    padding: 25px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form select,
+form button,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+}
+
+form button:hover {
+    background-color: #333;
+}
